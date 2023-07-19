@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Euclid";
+    src: url("../fonts/EuclidCircularABold.woff");
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter.ttf");
+}
+:root{
+    /* Light-Theme */  
+         --active:#5046e5;
+         --active-dark:#483fcf;
+         --active-darker:#3f37b7;
+
+         --bg: #ffffff; 
+         --bg-dark: #f8f8f8;
+         --bg-darker: #d2d2d2;
+         
+         --txt-light:#fff;
+         --txt-dark: #0a0a0a; 
+         --txt-dark-light: #5f666e;  
+         --txt-dark-lighter: #9098a4; 
+}
+
+/* global */
+body{
+   background-color: var(--bg); 
+}
+ul, ol {
+    list-style-type: none !important;
+}
+*{
+    box-sizing: border-box !important;
+}
+.form-control, .btn {
+   box-shadow: none !important;
+}
+ 
+/* text-components */
+.txt-title{
+    font-family: "Euclid"; 
+}
+.txt-text{
+    font-family: "Inter"; 
+}
+
+/* color-components */
+.colr-active{
+    color: var(--active);
+}
+.colr-dark{
+    color: var(--txt-dark);
+}
+.colr-dark-light{
+    color: var(--txt-dark-light);
+}
+.colr-dark-lighter{
+    color: var(--txt-dark-lighter);
+}
+
+
+/* background-color-components */
+.bg-colr-active{
+    background-color: var(--active);
+}
+.bg-colr-dark{
+    background-color: var(--txt-dark);
+}
+.bg-colr-dark-light{
+    background-color: var(--txt-dark-light);
+}
+.bg-colr-dark-lighter{
+    background-color: var(--txt-dark-lighter);
+}
+
+
+
+
+/* form-containers */
+  .form-container{  
+    width:25%; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    position: fixed;
+  }
+  .form-container .form-control, .form-container .btn-submit, .form-container .form-action {
+     border-radius:5px;
+     font-size: 18px;
+  }
+  .form-container .form-control, .form-container .form-action{
+    background-color: var(--bg-dark);
+    border: 1px solid var(--bg-darker);
+  }
+  .form-container .form-action{overflow: hidden;}
+  .form-container .form-action .btn:hover, .form-container .form-action .btn:active {background-color: transparent !important;color: var(--active);}
+  .form-container .form-action .form-action-item {border:none;border-radius:0px !important;}
+  .form-container .form-control:focus, .form-container .form-action:focus-within {
+    border: 2px solid var(--active);
+  } 
+  .form-container .form-action .form-action-item:focus{ border:none !important;}
+  .form-container .btn-submit{
+      background-color: var(--active);
+      color: var(--txt-light);
+  }
+  .form-container .btn-submit:hover{
+    background-color: var(--active-dark);
+    color: var(--txt-light);
+  }
+  .form-container .btn-submit:active{
+    background-color: var(--active-darker);
+    color: var(--txt-light);
+  }

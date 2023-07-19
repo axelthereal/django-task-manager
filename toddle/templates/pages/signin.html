@@ -1,0 +1,44 @@
+{% extends "headers/base.html" %}
+
+{# view-header #}
+ {% block viewHeader %} 
+ {% endblock %}
+{# /*view-header #}
+
+{# view-Content #}
+{% block viewContent %}
+{% load static %}  
+<script type="module" src="{% static '/js/login_app.js' %}"></script>
+
+<div class="form-container"> 
+   <form action="" method="post">
+    <div class="form-header" align="center">
+        <h3 class="display-6 txt-title colr-dark">todd<span class="colr-active">le.</span></h3>
+        <p class="txt-text colr-dark-light fw-semibold py-2">Sign in to your toddle account to create, edit and manage your daily tasks easily</p>
+        <hr class="divider">
+    </div> 
+    <div class="form-group">
+        {% csrf_token %}
+        <div class="form-group py-1">
+            <label for="username" class="py-2 ms-1 colr-dark-light txt-text fw-normal">Username</label>
+            <input type="text" name="username" class="form-control py-2" placeholder="Enter your username" />
+        </div>
+
+        <div class="form-group py-1">
+            <label for="passowrd" class="py-2 ms-1 colr-dark-light txt-text fw-normal">Your Password</label>
+            <div class="form-action d-flex align-items-center">
+                <input type="password" name="password" class="form-control py-2 form-action-item" placeholder="Enter your password" />
+                <span class="btn btn-light form-action-item"><i class="bi-eye"></i></span>
+            </div>
+        </div>
+
+        <button type="button" id="submitBtn" class="btn btn-light btn-submit mt-4 py-2 w-100 d-flex justify-content-center align-items-center">Sign in</button>
+    </div>
+    <div class="form-footer mt-4" align="center">
+       <p class="small txt-text colr-dark-light">Don't have an account ? <a href="{% url 'default-view' %}" class="">Sign up</a></p>
+    </div>
+   </form> 
+</div>
+
+{% endblock %}
+{# /*view-content #}
