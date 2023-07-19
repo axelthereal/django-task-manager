@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toddle. | {{ viewname }}</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/global.css' %}">
+    <link rel="stylesheet" href="{% static '/icons/bootstrap-icons.css' %}">
+    <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/js/vue.js' %}"></script>
+</head>
+<body>
+
+    {# view-header #}
+     {% block viewHeader %}
+       <p class="text-muted opacity-75 py-5 px-5">Error Navbar not found...</p>
+     {% endblock %}
+    {# /*view-header #}
+
+    {# view-Content #}
+     {% block viewContent %}
+     <p class="text-muted opacity-75 py-5 px-5">Error Page content not found...</p>
+     {% endblock %}
+   {# /*view-content #}
+
+</body>
+</html>
