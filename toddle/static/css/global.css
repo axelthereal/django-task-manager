@@ -77,6 +77,9 @@ ul, ol {
 
 
 /* form-containers */
+@media screen and (max-width:1076px) {
+    .form-container{ min-width: 350px;}
+}
   .form-container{  
     width:25%; 
     top: 50%;
