@@ -11,3 +11,11 @@ def signin_view(req):
             "viewname": "Sign in"
       }
       return render(req, template_name, context)
+
+    
+def signup_view(req): 
+      template_name = "pages/signup.html"
+      context = {
+            "viewname": "Create an account"
+      }
+      return render(req, template_name, context)
