@@ -19,3 +19,12 @@ def signup_view(req):
             "viewname": "Create an account"
       }
       return render(req, template_name, context)
+
+
+    
+def home_view(req): 
+      template_name = "pages/home.html"
+      context = {
+            "viewname": "Home"
+      }
+      return render(req, template_name, context)
