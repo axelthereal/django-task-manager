@@ -17,6 +17,7 @@
          --bg-darker: #d2d2d2;
          --bg-dark-light:#e9ecf2;
          --bg-grey:#fafcff;
+         --bg-grey-dark:#ecf2fa;
          
          --txt-light:#fff;
          --txt-darker: #0a0a0a; 
@@ -53,7 +54,7 @@ ul, ol {
 }
 .colr-dark{
     color: var(--txt-dark);
-}
+} 
 .colr-dark-light{
     color: var(--txt-dark-light);
 }
@@ -135,6 +136,10 @@ ul, ol {
   }
 
 /* Body-content */
+.divider{
+    background-color: var(--bg-grey-dark);
+    padding: 1px;
+}
 .btn-custom{   
     border-radius: 5px;
     font-size: 18px;
@@ -156,5 +161,27 @@ ul, ol {
     background-color: var(--bg);
     color: var(--txt-dark);
     border:1px solid var(--bg-darker) !important;
+  }
+  .btn-custom-dark:hover {
+    background-color: var(--bg-dark) !important; 
+  }
+  .btn-custom-dark:active {
+    background-color: var(--bg-dark-light) !important; 
+  }
+
+
+  .sidebar .profile-img{
+     width:55px;
+     height: 55px;
+  }
+  .list-group .list-group-item .bi{color: var(--active);}
+  .list-group .list-group-item{
+     background: transparent;
+     border: none;
+     border-radius: 5px; 
+  }
+  .list-group .list-group-item:hover{
+      color: var(--active) !important;
+      background-color: var(--bg-grey-dark);
   }
     /* side-bar */
