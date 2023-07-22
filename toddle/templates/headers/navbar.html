@@ -1,30 +1,37 @@
-<nav class="navbar py-2 navbar-expand navbar-default bg-light fixed-top">
+{% load static %}
+<nav class="navbar py-2 navbar-expand navbar-default bg-default sticky-top">
    <div class="container col-lg-8">
     <a href="{% url 'home-view' %}" class="navbar-brand fs-4 txt-title colr-dark">todd<span class="colr-active">le.</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
    <div class="collapse navbar-collapse justify-content-end align-items-center" id="topNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav align-items-center">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi-search"></i></a>
+            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-search txt-title"></i></a>
           </li>  
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi-plus-circle"></i></a>
+            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-plus-circle"></i></a>
           </li>   
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi-collection"></i></a>
+            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-collection"></i></a>
           </li>  
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi-bell"></i></a>
+            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-bell"></i></a>
           </li>
-          
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+             <img src="{% static '/images/avatar.jpg' %}" class="rounded-circle profile-img" alt="profile-img" srcset="">
+             <i class="bi bi-chevron-down mx-1 fw-bold"></i>
+            </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-people"></i> Contacts</a></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-check-all"></i> Tasks</a></li> 
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-list-stars"></i> Completed</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-gear"></i> Settings</a></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-box-arrow-right"></i> Logout</a></li>
             </ul>
           </li>
 

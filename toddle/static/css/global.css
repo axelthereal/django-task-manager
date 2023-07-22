@@ -15,16 +15,19 @@
          --bg: #ffffff; 
          --bg-dark: #f8f8f8;
          --bg-darker: #d2d2d2;
+         --bg-dark-light:#e9ecf2;
+         --bg-grey:#fafcff;
          
          --txt-light:#fff;
-         --txt-dark: #0a0a0a; 
+         --txt-darker: #0a0a0a; 
+         --txt-dark:#1f1f21;
          --txt-dark-light: #5f666e;  
          --txt-dark-lighter: #9098a4; 
 }
 
 /* global */
 body{
-   background-color: var(--bg); 
+   background-color: var(--bg-grey); 
 }
 ul, ol {
     list-style-type: none !important;
@@ -75,6 +78,22 @@ ul, ol {
 
 
 
+/* navbar */
+.navbar{ border-bottom:2px solid var(--bg-dark-light);background-color:var(--txt-light) !important;}
+.navbar .nav-item a{ 
+    color: var(--txt-dark) !important;
+}
+.navbar .nav-item:hover:not(.dropdown) a{ color: var(--active) !important;} 
+.navbar .profile-img{
+     width:35px;
+}
+.navbar .dropdown .dropdown-menu a.dropdown-item:active{
+    color: var(--txt-light) !important;
+    background-color: var(--active) !important;
+}
+.navbar .dropdown .dropdown-toggle::after{ 
+    border: none;
+} 
 
 /* form-containers */
 @media screen and (max-width:1076px) {
@@ -114,3 +133,28 @@ ul, ol {
     background-color: var(--active-darker);
     color: var(--txt-light);
   }
+
+/* Body-content */
+.btn-custom{   
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 2px;
+}
+  .btn-custom-active{
+    background-color: var(--active);
+    color: var(--txt-light);
+}
+.btn-custom-active:hover{
+    background-color: var(--active-dark) !important;
+    color: var(--txt-light) !important;
+  }
+.btn-custom-active:active{
+    background-color: var(--active-darker) !important;
+    color: var(--txt-light) !important;
+  }
+.btn-custom-dark{
+    background-color: var(--bg);
+    color: var(--txt-dark);
+    border:1px solid var(--bg-darker) !important;
+  }
+    /* side-bar */
