@@ -15,9 +15,9 @@
          --bg: #ffffff; 
          --bg-dark: #f8f8f8;
          --bg-darker: #d2d2d2;
-         --bg-dark-light:#e9ecf2;
+         --bg-dark-light:#d7dce7;
          --bg-grey:#fafcff;
-         --bg-grey-dark:#ecf2fa;
+         --bg-grey-dark:#e9ecf2;
          
          --txt-light:#fff;
          --txt-darker: #0a0a0a; 
@@ -168,8 +168,6 @@ ul, ol {
   .btn-custom-dark:active {
     background-color: var(--bg-dark-light) !important; 
   }
-
-
   .sidebar .profile-img{
      width:55px;
      height: 55px;
@@ -185,3 +183,16 @@ ul, ol {
       background-color: var(--bg-grey-dark);
   }
     /* side-bar */
+
+
+/* Tasks-feed */
+
+.ts-feed-group-header .line-hr{
+    background-color: var(--bg-dark-light);
+    height:1px;
+    width: 70%;
+}  
+.ts-feed-group-header .feed-toggler{width:30%;}   
+.ts-feed-group-header .feed-toggler:not(.collapsed){
+    color: var(--active) !important;
+}
