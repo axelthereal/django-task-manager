@@ -48,8 +48,6 @@ ul, ol {
     font-family: "Inter"; 
 }
 
-.bi-stopwatch{ -webkit-text-stroke:bold !important; }
-
 /* color-components */
 .colr-active{
     color: var(--active);

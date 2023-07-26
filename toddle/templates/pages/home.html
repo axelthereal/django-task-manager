@@ -11,54 +11,8 @@
 {% load static %}   
 <main class="container col-lg-8 mt-4 mb-5 pb-5">
     <div class="main-content row">
-{# sidebar #}
-<div class="sidebar col-lg-3">
-    
-    <div class="profile-bx d-flex justify-content-start align-items-center gap-3 py-1 mb-2 ps-2">
-        <img src="{% static '/images/avatar.jpg' %}" class="rounded-circle profile-img" alt="profile-img" srcset="">
-        <div class="profile-info">
-           <span class="fullnames d-block txt-title fw-semibold fs-5 colr-darker">Axel Tokam</span> 
-           <span class="username d-block txt-text fw-lighter small colr-dark-light">@axeltokam</span>
-        </div>
-    </div>
-   
-
-   <div class="list-group py-1 px-1 mt-4">
-    <span class="fs-6 txt-title fw-semibold colr-dark opacity-80 ps-2">Your Account</span>
-    <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-      <span class="bi bi-person"></span>
-      <span class="fs-6 colr-dark">Profile</span>
-    </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-        <span class="bi bi-gear"></span>
-        <span class="fs-6 colr-dark">Settings</span>
-      </a>
-   </div>
-   
-
-   <div class="list-group py-1 px-1 my-3">
-    <span class="fs-6 txt-title fw-semibold colr-dark opacity-80 ps-2">Task Manager</span>
-    <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-      <span class="bi bi-list-task"></span>
-      <span class="fs-6 colr-dark">All Tasks</span>
-    </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-        <span class="bi bi-check-all"></span>
-        <span class="fs-6 colr-dark">Completed</span>
-      </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-        <span class="bi bi-stopwatch"></span>
-        <span class="fs-6 colr-dark">Pending</span>
-      </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-        <span class="bi bi-trash"></span>
-        <span class="fs-6 colr-dark">Canceled</span>
-      </a>
-   </div>
-   
-    
-  </div>
-{# /*sidebar #}
+     {# sideBar #}
+     {% include "headers/sidebar.html" %}
 {# main-bd #}
   <div class="main-bd col-lg-9">
   <div class="bd-greetings m-0 border-0">
@@ -80,41 +34,46 @@
     <div class="task-feed mt-2" id="taskFeedApp">
     
         {# Tasks-group #}
-        <div class="ts-feed-group" :id="tasksGroupOne">
+        <div class="ts-feed-group mt-2 mb-3 pb-3" :id="tasksGroupOne">
            <div class="ts-feed-group-header d-flex justify-content-between align-items-center gap-1 px-0 mx-0">
              <span @click="GroupOneToggle()" class="feed-toggler small collapsed d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#recentlyAdded" aria-expanded="true" aria-controls="recentlyAdded">
                
-               <span v-if="tasksGroupOne.active" class="bi-chevron-right bold me-1"></span>
+               <span v-if="!tasksGroupOne.active" class="bi-chevron-right bold me-1"></span>
                <span class="bi-chevron-down bold me-1" v-else></span>
 
                <span class="bi-clipboard-check"></span> 
-               <span class="fw-medium">Recently Added Tasks <span class="sss">abc</span></span>
+               <span class="fw-medium">Recently Added Tasks </span>
              </span>
              <span class="line-hr d-block rounded"></span>
            </div>
            <div id="recentlyAdded" class="list-group ts-feed-group-body collapse show" data-bs-parent="#tasksGroupOne">
             <h5 class="fs-5 txt-title fw-medium mt-3">Recently Added Tasks </h5>
             
-            <div class="task-item  py-4 px-3 rounded-3 bg-white">
-              <div class="task-item-body d-flex justify-content-between align-items-stretch">
-                 <div class="task-item-info">
-                  <span class="txt-text colr-dark item-title fw-semibold mt-3 mb-5">Clean the living room and the backyard</span>
-                  <p class="colr-dark-lighter">Use a broom and some clean water to clean the living room</p>
-                 </div>
-                 <div class="btn-bx">
-                  <a href="" class="btn btn-default btn-sm btn-custom btn-custom-dark fs-6 px-2 align-items-md-center justify-content-between"><i class="bi-check-all"></i> <span class="txt-text colr-dark ps-1">Complete</span> </a>
-                  <a href="" class="btn btn-default btn-sm btn-custom btn-custom-dark fs-6 px-2 align-items-md-center justify-content-between"><i class="bi-trash3"></i>  <span class="txt-text colr-dark ps-1">Delete</span></a>
-                 </div>
-              </div>
-              <div class="task-item-footer fw-medium d-flex justify-content-between mt-2 align-items-center">
-                <span class="task-time small colr-dark-light d-flex gap-2"><span class="bi-alarm"></span> <span>12:30:12</span> <b>on</b> <span>Monday 12 Jul 2023</span></span>
-                <span class="task-item-badge small rounded-2 px-2 py-1 text-success-emphasis bg-success-subtle border border-success-subtle">Normal</span>
-              </div>
-            </div>
-
+            {% include "headers/tasks_list_pending.html" %}
+              
            </div> 
         </div>
-          
+ 
+        {# Tasks-group #}
+        <div class="ts-feed-group mt-2 mb-3 pb-3" :id="tasksGroupTwo">
+          <div class="ts-feed-group-header d-flex justify-content-between align-items-center gap-1 px-0 mx-0">
+            <span @click="GroupTwoToggle()" class="feed-toggler small d-flex align-items-center collapsed gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#completedTasks" aria-expanded="false" aria-controls="completedTasks">
+              
+              <span v-if="tasksGroupTwo.active" class="bi-chevron-right bold me-1"></span>
+              <span class="bi-chevron-down bold me-1" v-else></span>
+
+              <span class="bi-clipboard-check"></span> 
+              <span class="fw-medium">Completed Tasks </span>
+            </span>
+            <span class="line-hr d-block rounded"></span>
+          </div>
+          <div id="completedTasks" class="list-group ts-feed-group-body collapse" data-bs-parent="#tasksGroupTwo">
+           <h5 class="fs-5 txt-title fw-medium mt-3">Completed Task </h5>
+           
+           {% include "headers/tasks_list_completed.html" %}
+
+          </div> 
+       </div>
           
         {# ...Tasks #}
 
@@ -134,13 +93,20 @@
            return {
             tasksGroupOne: {
                 tasksList: ["app"],
-                active: false, 
+                active: true 
+            },
+            tasksGroupTwo: {
+                tasksList: ["app"],
+                active: true, 
             }
            }
         },
         methods: {
           GroupOneToggle(){
-              this.tasksGroupOne.active = this.tasksGroupOne.active === true ? false : true;
+              this.tasksGroupOne.active = this.tasksGroupOne.active == false ? true : false;
+          },
+          GroupTwoToggle(){
+              this.tasksGroupTwo.active = this.tasksGroupTwo.active == false ? true : false;
           }
         }, 
   }).mount("#taskFeedApp");
