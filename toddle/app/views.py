@@ -55,4 +55,4 @@ def pending_tasks_view(req):
 
     
 def logout(req): 
-      return redirect("/signup")
+      return redirect("/signin")

@@ -6,13 +6,15 @@ from .views import (
     home_view,
     tasks_view,
     completed_tasks_view,
-    pending_tasks_view
+    pending_tasks_view,
+    logout
     )
 
 urlpatterns = [
         path("", default_view, name="default-view"),
         path("signin", signin_view, name="signin-view"),
         path("signup", signup_view, name="signup-view"),
+        path("logout", logout, name="logout-view"),
         path("tasks", tasks_view, name="tasks-view"),
         path("completed", completed_tasks_view, name="completed-tasks-view"),
         path("pending", pending_tasks_view, name="pending-tasks-view"),

@@ -1,0 +1,66 @@
+{% extends "headers/base.html" %}
+
+{# view-header #}
+ {% block viewHeader %} 
+   {% include "headers/navbar.html" %}
+ {% endblock %}
+{# /*view-header #}
+
+{# view-Content #}
+{% block viewContent %}
+{% load static %}   
+<main class="container col-lg-8 mt-4 mb-5 pb-5">
+    <div class="main-content row">
+     {# sideBar #}
+     {% include "headers/sidebar.html" %}
+{# main-bd #}
+  <div class="main-bd col-lg-9"> 
+
+    <div class="header d-flex justify-content-between align-items-center py-2">
+    <h3 class="fs-4 txt-title fw-bold colr-dark py-0 my-0">Pending Tasks</h3>
+    <span class="btns">
+        <a href="" class="btn btn-default btn-sm btn-custom btn-custom-active fs-6 px-2 align-items-md-center justify-content-between">Add Task <i class="bi-plus-circle"></i></a>
+        <a href="" class="btn btn-default btn-sm btn-custom btn-custom-dark fs-6 px-2 align-items-md-center justify-content-between"><i class="bi-gear"></i></a>
+    </span>
+    </div>
+
+    {# tasks-content #}
+    <div class="task-feed mt-2" id="taskFeedApp">
+     {# ...Tasks #}
+     {% include "headers/tasks_list_pending.html" %}
+    </div>
+
+  </div>
+{# /*main-bd #}
+    </div> 
+</main>
+
+<script>
+  const { createApp } = Vue;
+  
+  const taskFeedApp = createApp({
+        delimiters: ["${", "}"],
+        data(){
+           return {
+            tasksGroupOne: {
+                tasksList: ["app"],
+                active: true 
+            },
+            tasksGroupTwo: {
+                tasksList: ["app"],
+                active: true, 
+            }
+           }
+        },
+        methods: {
+          GroupOneToggle(){
+              this.tasksGroupOne.active = this.tasksGroupOne.active == false ? true : false;
+          },
+          GroupTwoToggle(){
+              this.tasksGroupTwo.active = this.tasksGroupTwo.active == false ? true : false;
+          }
+        }, 
+  }).mount("#taskFeedApp");
+</script>
+{% endblock %}
+{# /*view-content #}
