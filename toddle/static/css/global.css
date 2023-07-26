@@ -103,7 +103,7 @@ ul, ol {
 @media screen and (max-width:1076px) {
     .form-container{ min-width: 350px;}
 }
-  .form-container{  
+  .form-container:not(.form-bx){  
     width:25%; 
     top: 50%;
     left: 50%;  
