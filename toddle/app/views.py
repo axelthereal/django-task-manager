@@ -29,6 +29,12 @@ def home_view(req):
       }
       return render(req, template_name, context)
 
+def add_view(req): 
+      template_name = "pages/add_task.html"
+      context = {
+            "viewname": "Create a new task"
+      }
+      return render(req, template_name, context)
     
 def tasks_view(req): 
       template_name = "pages/tasks.html"

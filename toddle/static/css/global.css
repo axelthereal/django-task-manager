@@ -188,8 +188,8 @@ ul, ol {
     /* side-bar */
 
 
-/* Tasks-feed */
 
+/* Tasks-feed */
 .ts-feed-group-header .line-hr{
     background-color: var(--bg-dark-light);
     height:1px;
@@ -202,3 +202,5 @@ ul, ol {
 .task-item{
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
 }
+
+/* Add task */

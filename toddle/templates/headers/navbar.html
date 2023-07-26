@@ -11,10 +11,10 @@
             <a class="nav-link" aria-current="page" href="#"><i class="bi bi-search txt-title"></i></a>
           </li>  
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-plus-circle"></i></a>
+            <a class="nav-link" aria-current="page" href="{% url 'add-view' %}"><i class="bi bi-plus-circle"></i></a>
           </li>   
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-collection"></i></a>
+            <a class="nav-link" aria-current="page" href="{% url 'tasks-view' %}"><i class="bi bi-collection"></i></a>
           </li>  
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#"><i class="bi bi-bell"></i></a>
@@ -26,12 +26,13 @@
              <i class="bi bi-chevron-down mx-1 fw-bold"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-people"></i> Contacts</a></li>
-              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-check-all"></i> Tasks</a></li> 
-              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-list-stars"></i> Completed</a></li>
+              <li><a class="dropdown-item" href="{% url 'home-view' %}"><i class="me-1 bi bi-house"></i> Home</a></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-person"></i> Profile</a></li>
+              <li><a class="dropdown-item" href="{% url 'tasks-view' %}"><i class="me-1 bi bi-list-stars"></i> Tasks</a></li> 
+              <li><a class="dropdown-item" href="{% url 'completed-tasks-view' %}"><i class="me-1 bi bi-check-all"></i> Completed</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-gear"></i> Settings</a></li>
-              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-box-arrow-right"></i> Logout</a></li>
+              <li><a class="dropdown-item" href="#"><i class="me-1 bi bi-people"></i> Contacts</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout-view' %}"><i class="me-1 bi bi-box-arrow-right"></i> Logout</a></li>
             </ul>
           </li>
 
