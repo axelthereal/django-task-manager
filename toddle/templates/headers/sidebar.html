@@ -26,22 +26,26 @@
 
    <div class="list-group py-1 px-1 my-3">
     <span class="fs-6 txt-title fw-semibold colr-dark opacity-80 ps-2">Task Manager</span>
-    <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
+    <a href="{% url 'tasks-view' %}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
       <span class="bi bi-list-task"></span>
       <span class="fs-6 colr-dark">All Tasks</span>
     </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
+      <a href="{% url 'completed-tasks-view' %}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
         <span class="bi bi-check-all"></span>
         <span class="fs-6 colr-dark">Completed</span>
       </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
+      <a href="{% url 'pending-tasks-view' %}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
         <span class="bi bi-stopwatch"></span>
         <span class="fs-6 colr-dark">Pending</span>
-      </a>
-      <a href="" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
-        <span class="bi bi-trash"></span>
-        <span class="fs-6 colr-dark">Canceled</span>
-      </a>
+      </a> 
+   </div>
+
+   <div class="list-group py-1 px-1 mt-4">
+    <span class="fs-6 txt-title fw-semibold colr-dark opacity-80 ps-2">Other</span>
+    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-2 my-1 ps-2">
+      <span class="bi bi-person"></span>
+      <span class="fs-6 colr-dark">Logout</span>
+    </a> 
    </div>
    
     

@@ -28,3 +28,31 @@ def home_view(req):
             "viewname": "Home"
       }
       return render(req, template_name, context)
+
+    
+def tasks_view(req): 
+      template_name = "pages/tasks.html"
+      context = {
+            "viewname": "All Tasks"
+      }
+      return render(req, template_name, context)
+
+    
+def completed_tasks_view(req): 
+      template_name = "pages/completed_tasks.html"
+      context = {
+            "viewname": "All Tasks"
+      }
+      return render(req, template_name, context)
+    
+
+def pending_tasks_view(req): 
+      template_name = "pages/pending_tasks.html"
+      context = {
+            "viewname": "All Tasks"
+      }
+      return render(req, template_name, context)
+
+    
+def logout(req): 
+      return redirect("/signup")
