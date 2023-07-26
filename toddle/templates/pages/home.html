@@ -82,13 +82,13 @@
         {# Tasks-group #}
         <div class="ts-feed-group" :id="tasksGroupOne">
            <div class="ts-feed-group-header d-flex justify-content-between align-items-center gap-1 px-0 mx-0">
-             <span class="feed-toggler small collapsed d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#recentlyAdded" aria-expanded="true" aria-controls="recentlyAdded">
+             <span @click="GroupOneToggle()" class="feed-toggler small collapsed d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#recentlyAdded" aria-expanded="true" aria-controls="recentlyAdded">
                
-               <span v-if="tasksGroupOne.active" class="bi-chevron-right me-1"></span>
-               <span class="bi-chevron-down me-1" v-else></span>
+               <span v-if="tasksGroupOne.active" class="bi-chevron-right bold me-1"></span>
+               <span class="bi-chevron-down bold me-1" v-else></span>
 
                <span class="bi-clipboard-check"></span> 
-               <span class="fw-medium" @click="talk($event)">Recently Added Tasks <span class="sss">abc</span></span>
+               <span class="fw-medium">Recently Added Tasks <span class="sss">abc</span></span>
              </span>
              <span class="line-hr d-block rounded"></span>
            </div>
@@ -139,8 +139,8 @@
            }
         },
         methods: {
-          talk(e){
-            console.log(e.target.className);
+          GroupOneToggle(){
+              this.tasksGroupOne.active = this.tasksGroupOne.active === true ? false : true;
           }
         }, 
   }).mount("#taskFeedApp");
