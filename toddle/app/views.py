@@ -34,7 +34,7 @@ def signup_view(req):
             elif User.objects.filter(username=username).exists():
                messages.info(req, 'User already exists, try another username')
             else:
-                user = User.objects.create_user(fullnames=fullnames, username=username, email=email, password=password) 
+                user = User.objects.create_user(username=username, email=email, password=password) 
                 user.save()
                 
                 # login_user
@@ -43,12 +43,12 @@ def signup_view(req):
 
                 # create profile  
                 user_model = User.objects.get(username=username)
-                new_profile = ProfileModel.objects.create(user=user_model, id_user=user_model.id)
+                new_profile = ProfileModel.objects.create(user=user_model, id_user=user_model.id, fullnames=fullnames)
                 new_profile.save()
                 return redirect('/home')
         else:
            messages.info(req, 'Passwords Not Matching') 
-        return redirect("/register") 
+        return redirect("/signup") 
 
       template_name = "pages/signup.html"
       context = {
