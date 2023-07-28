@@ -10,7 +10,7 @@
 {% load static %}  
 <script type="module" src="{% static '/js/login_app.js' %}"></script>
 
-<div class="form-container"> 
+<div class="form-container">  
    <form action="" method="post">
     <div class="form-header" align="center">
         <h3 class="display-6 txt-title colr-dark">todd<span class="colr-active">le.</span></h3>
@@ -51,9 +51,8 @@
     </div>
     <div class="form-footer mt-4" align="center">
        <p class="small txt-text colr-dark-light">Already have an account ? <a href="{% url 'signin-view' %}" class="">Sign up</a></p>
-    </div>
+    </div> 
    </form> 
-</div>
-
+</div> 
 {% endblock %}
 {# /*view-content #}
